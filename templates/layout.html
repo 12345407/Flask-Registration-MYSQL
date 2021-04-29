@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registratino</title>
+</head>
+<style>
+    .navbar {
+        margin: 0;
+        max-height: fit-content;
+        background-color: rgb(29, 23, 23);
+        display: flex;
+        position: static;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 50px;
+        margin-bottom: 20px;
+    }
+
+    .nav-item {
+        font-family: serif;
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+        font-weight: 800;
+        text-decoration: none;
+        transition: 0.4s;
+    }
+
+    .nav-item:hover {
+
+        font-size: 18px;
+        font-weight: 1500;
+        border-style: solid;
+        border-width: 0px 0px 2px 0px;
+        border-bottom-color: rgb(25, 61, 59);
+
+    }
+
+    .nav-btn {
+        padding: 5px 10px;
+        border: none;
+        border-radius: 30%;
+        background-color: aqua;
+        transition: 0.4s;
+    }
+
+    .nav-btn:hover {
+        border-radius: 40%;
+        border: 2px solid;
+        border-left-color: rgb(101, 148, 146);
+        border-right-color: rgb(15, 128, 122);
+        border-top-color: rgb(90, 216, 210);
+        border-bottom-color: rgb(25, 61, 59);
+        background-color: rgba(0, 0, 0, 0.822);
+    }
+</style>
+
+<body>
+    <div class="navbar">
+
+        <a href="//" class="nav-item">Home</a>
+        <a href=" {{url_for('home')}} " class="nav-item">About</a>
+        <a href="//" class="nav-item">Contact Us</a>
+        <button type="button" class="nav-btn"><a href="{{ url_for('login') }}" class="nav-item">Login</a></button>
+        <button type="button" class="nav-btn"><a href="{{ url_for('register') }}" class="nav-item">Register</a></button>
+    </div>
+    <div class="container">
+        {% block content %}
+
+        {% endblock content %}
+    </div>
+
+</body>
+
+</html>
